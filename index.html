@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>SJ MEDITEK | Enterprise PACS, Biomedical Asset Tracking, Hospital Billing &amp; Paperless Doctor EMR</title>
+  <title>SJ MEDITEK | Enterprise PACS, Biomedical Asset Tracking (NABH), Hospital Billing &amp; Paperless EMR</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="SJ MEDITEK provides clinical-grade Enterprise &amp; Standalone PACS, NABH-Compliant Biomedical Asset &amp; Breakdown Maintenance, 24-Hour Turnkey Hospital Billing, and 100% Penless Doctor EMR with instant auto-routing across India.">
-  <meta name="keywords" content="PACS, Standalone PACS, Enterprise PACS, Biomedical Asset Tracking, NABH Audit Software, Hospital Breakdown Maintenance, Hospital Billing Software, Pharmacy Billing, Paperless Doctor EMR, CPOE, Cath Lab Viewer, SJ Meditek">
-  <meta name="author" content="SJ Meditek">
+  <meta name="description" content="SJ MEDITEK, founded in 2024 by Managing Director Selvakumar Somasundaram, provides clinical-grade Enterprise &amp; Standalone PACS, NABH-Compliant Biomedical Asset &amp; Breakdown Maintenance, 24-Hour Hospital Billing, and 100% Penless Doctor EMR with dedicated mobile apps across India.">
+  <meta name="keywords" content="PACS, Standalone PACS, Enterprise PACS, Biomedical Asset Tracking, NABH Audit Software, Hospital Breakdown Maintenance, Hospital Billing Software, Paperless Doctor EMR, Mobile PACS, Selvakumar Somasundaram, SJ Meditek">
+  <meta name="author" content="Selvakumar Somasundaram, SJ Meditek">
   <link rel="canonical" href="https://sjmeditek.com/">
   
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="SJ MEDITEK | Enterprise PACS &amp; Complete Hospital Healthcare Suite">
-  <meta property="og:description" content="Clinical PACS, NABH Biomedical Asset Tracking, 24-Hour Hospital Billing, and 100% Penless Doctor EMR for modern healthcare facilities.">
+  <meta property="og:description" content="Clinical PACS, NABH Biomedical Asset Tracking, 24-Hour Hospital Billing, and 100% Penless Doctor EMR with native mobile apps in every module. Established 2024.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sjmeditek.com/">
   <meta property="og:image" content="assets/hero-bg.jpg">
@@ -29,14 +29,15 @@
 
   <style>
     /* ==========================================================================
-       DESIGN TOKENS & SYSTEM VARIABLES
+       DESIGN TOKENS & DUAL THEME SYSTEM (DARK & LIGHT)
        ========================================================================== */
     :root {
+      /* Dark Theme (Default) */
       --bg-darkest: #040711;
       --bg-dark: #080e1c;
       --bg-surface: #0f182c;
       --bg-surface-elevated: #16243f;
-      --bg-card: rgba(15, 24, 44, 0.72);
+      --bg-card: rgba(15, 24, 44, 0.75);
       --bg-glass: rgba(15, 24, 44, 0.65);
       
       --cyan-primary: #00d2ff;
@@ -78,6 +79,51 @@
       
       --container-max: 1240px;
       --transition-smooth: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      --header-bg: rgba(4, 7, 17, 0.88);
+      --input-bg: rgba(4, 7, 17, 0.8);
+      --footer-bg: #02050c;
+    }
+
+    /* Light Theme Tokens */
+    [data-theme="light"] {
+      --bg-darkest: #f1f5f9;
+      --bg-dark: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: #f1f5f9;
+      --bg-card: rgba(255, 255, 255, 0.95);
+      --bg-glass: rgba(255, 255, 255, 0.92);
+      
+      --cyan-primary: #0284c7;
+      --cyan-light: #0369a1;
+      --cyan-glow: rgba(2, 132, 199, 0.18);
+      --sapphire: #0369a1;
+      --sapphire-dark: #075985;
+      
+      --emerald: #059669;
+      --emerald-light: #047857;
+      --emerald-glow: rgba(5, 150, 105, 0.18);
+      
+      --purple: #7c3aed;
+      --purple-light: #6d28d9;
+      --purple-glow: rgba(124, 58, 237, 0.18);
+      
+      --amber: #d97706;
+      --rose: #dc2626;
+      
+      --text-main: #0f172a;
+      --text-muted: #334155;
+      --text-dim: #64748b;
+      
+      --border-subtle: rgba(0, 0, 0, 0.09);
+      --border-glow: rgba(2, 132, 199, 0.4);
+      
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.08);
+      --shadow-glow: 0 0 30px rgba(2, 132, 199, 0.12);
+      
+      --header-bg: rgba(255, 255, 255, 0.92);
+      --input-bg: #ffffff;
+      --footer-bg: #f8fafc;
     }
 
     /* ==========================================================================
@@ -103,6 +149,7 @@
       line-height: 1.6;
       overflow-x: hidden;
       padding-bottom: 76px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     @media (min-width: 900px) {
@@ -173,6 +220,11 @@
       border-color: rgba(245, 158, 11, 0.35);
     }
 
+    [data-theme="light"] .badge-amber {
+      color: #b45309;
+      background: rgba(245, 158, 11, 0.15);
+    }
+
     .badge-dot {
       width: 8px;
       height: 8px;
@@ -189,14 +241,14 @@
 
     .section-header {
       text-align: center;
-      max-width: 840px;
+      max-width: 860px;
       margin: 0 auto 52px;
     }
 
     .section-title {
       font-size: clamp(1.8rem, 3.2vw, 2.5rem);
       font-weight: 800;
-      color: #ffffff;
+      color: var(--text-main);
       margin-top: 14px;
       margin-bottom: 14px;
       line-height: 1.25;
@@ -232,10 +284,13 @@
       box-shadow: 0 4px 18px var(--cyan-glow);
     }
 
+    [data-theme="light"] .btn-primary {
+      color: #ffffff;
+    }
+
     .btn-primary:hover {
       box-shadow: 0 6px 24px rgba(0, 210, 255, 0.45);
       transform: translateY(-2px);
-      color: #031427;
     }
 
     .btn-emerald {
@@ -264,15 +319,24 @@
 
     .btn-secondary {
       background: rgba(255, 255, 255, 0.05);
-      color: #fff;
+      color: var(--text-main);
       border-color: var(--border-subtle);
       backdrop-filter: blur(10px);
+    }
+
+    [data-theme="light"] .btn-secondary {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
     }
 
     .btn-secondary:hover {
       background: rgba(255, 255, 255, 0.1);
       border-color: var(--cyan-light);
       transform: translateY(-2px);
+    }
+
+    [data-theme="light"] .btn-secondary:hover {
+      background: #e2e8f0;
     }
 
     .btn-whatsapp {
@@ -290,28 +354,29 @@
     }
 
     .btn-call {
-      background: #3b82f6;
+      background: #2563eb;
       color: #ffffff;
       font-weight: 700;
-      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
     }
 
     .btn-call:hover {
-      background: #2563eb;
+      background: #1d4ed8;
       transform: translateY(-2px);
     }
 
     /* ==========================================================================
-       NAVIGATION BAR
+       NAVIGATION BAR & THEME SWITCHER
        ========================================================================== */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(4, 7, 17, 0.85);
+      background: var(--header-bg);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-subtle);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .nav-bar {
@@ -338,10 +403,10 @@
     .nav-links {
       display: none;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
     }
 
-    @media (min-width: 1060px) {
+    @media (min-width: 1080px) {
       .nav-links {
         display: flex;
       }
@@ -349,7 +414,7 @@
 
     .nav-link {
       font-size: 0.88rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-muted);
       position: relative;
       padding: 6px 0;
@@ -363,7 +428,50 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+    }
+
+    /* Dark/Light Theme Toggle Button */
+    .theme-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    [data-theme="light"] .theme-toggle-btn {
+      background: #e2e8f0;
+      border-color: #cbd5e1;
+      color: #0f172a;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--cyan-light);
+      color: var(--cyan-light);
+      transform: rotate(15deg);
+    }
+
+    .sun-icon {
+      display: none;
+    }
+
+    .moon-icon {
+      display: block;
+    }
+
+    [data-theme="light"] .sun-icon {
+      display: block;
+    }
+
+    [data-theme="light"] .moon-icon {
+      display: none;
     }
 
     .hotline-chip {
@@ -379,7 +487,7 @@
       white-space: nowrap;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 820px) {
       .hotline-chip {
         display: inline-flex;
       }
@@ -409,7 +517,12 @@
       padding: 9px;
     }
 
-    @media (min-width: 1060px) {
+    [data-theme="light"] .hamburger-btn {
+      background: #e2e8f0;
+      border-color: #cbd5e1;
+    }
+
+    @media (min-width: 1080px) {
       .hamburger-btn {
         display: none;
       }
@@ -419,7 +532,7 @@
       display: block;
       height: 2px;
       width: 100%;
-      background: #fff;
+      background: var(--text-main);
       border-radius: 2px;
       transition: var(--transition-smooth);
     }
@@ -432,13 +545,11 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(4, 7, 17, 0.98);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
+      background: var(--bg-darkest);
       padding: 24px;
       z-index: 99;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
       border-top: 1px solid var(--border-subtle);
       overflow-y: auto;
     }
@@ -448,12 +559,12 @@
     }
 
     .mobile-nav-link {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: var(--text-main);
       padding: 12px 14px;
       border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.03);
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
@@ -490,6 +601,10 @@
       z-index: 0;
     }
 
+    [data-theme="light"] .hero-bg-wrapper {
+      opacity: 0.05;
+    }
+
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -516,7 +631,7 @@
       line-height: 1.15;
       letter-spacing: -0.03em;
       margin: 18px 0 20px;
-      color: #ffffff;
+      color: var(--text-main);
     }
 
     .hero-headline span {
@@ -592,6 +707,11 @@
       overflow: hidden;
     }
 
+    [data-theme="light"] .hero-card {
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      border-color: rgba(2, 132, 199, 0.3);
+    }
+
     .hero-card img {
       border-radius: var(--radius-md);
       width: 100%;
@@ -614,7 +734,7 @@
       gap: 6px;
       font-size: 0.8rem;
       font-weight: 600;
-      color: var(--emerald);
+      color: var(--emerald-light);
       background: rgba(16, 185, 129, 0.1);
       padding: 4px 10px;
       border-radius: var(--radius-full);
@@ -651,26 +771,35 @@
 
     .livedemo-card {
       background: var(--bg-surface);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
       padding: 32px 28px;
       display: flex;
       flex-direction: column;
       position: relative;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
       transition: var(--transition-smooth);
+    }
+
+    [data-theme="light"] .livedemo-card {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 0, 0, 0.1);
     }
 
     .livedemo-card:hover {
       border-color: var(--cyan-light);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 210, 255, 0.15);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 210, 255, 0.15);
       transform: translateY(-4px);
     }
 
     .livedemo-card.featured {
       border-color: rgba(0, 210, 255, 0.4);
-      background: linear-gradient(180deg, #101c34 0%, #0d1527 100%);
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 210, 255, 0.12);
+      background: linear-gradient(180deg, var(--bg-surface-elevated) 0%, var(--bg-surface) 100%);
+    }
+
+    [data-theme="light"] .livedemo-card.featured {
+      background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+      border-color: rgba(2, 132, 199, 0.35);
     }
 
     .livedemo-status-tag {
@@ -693,7 +822,7 @@
     .livedemo-title {
       font-size: 1.65rem;
       font-weight: 800;
-      color: #fff;
+      color: var(--text-main);
       margin-bottom: 8px;
     }
 
@@ -713,16 +842,20 @@
       margin-bottom: 24px;
     }
 
-    /* Terminal-style credentials box */
     .credentials-box {
-      background: #040711;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: var(--bg-darkest);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 16px 18px;
       margin-bottom: 24px;
       display: flex;
       flex-direction: column;
       gap: 12px;
+    }
+
+    [data-theme="light"] .credentials-box {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
     }
 
     .cred-row {
@@ -745,12 +878,17 @@
       font-family: var(--font-mono);
       font-size: 0.95rem;
       font-weight: 700;
-      color: #ffffff;
+      color: var(--text-main);
       background: rgba(255, 255, 255, 0.07);
       padding: 4px 10px;
       border-radius: var(--radius-sm);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-subtle);
       letter-spacing: 0.03em;
+    }
+
+    [data-theme="light"] .cred-value {
+      background: #ffffff;
+      border-color: #cbd5e1;
     }
 
     .copy-btn {
@@ -820,7 +958,11 @@
     .solution-card.highlight {
       background: linear-gradient(180deg, var(--bg-surface-elevated) 0%, var(--bg-surface) 100%);
       border-color: rgba(0, 210, 255, 0.35);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 210, 255, 0.1);
+    }
+
+    [data-theme="light"] .solution-card.highlight {
+      background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+      border-color: rgba(2, 132, 199, 0.35);
     }
 
     .solution-tag {
@@ -835,7 +977,7 @@
     .solution-title {
       font-size: 1.7rem;
       font-weight: 800;
-      color: #fff;
+      color: var(--text-main);
       margin-bottom: 12px;
     }
 
@@ -898,8 +1040,8 @@
       padding: 16px 20px;
       font-size: 0.95rem;
       font-weight: 700;
-      color: #fff;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      border-bottom: 2px solid var(--border-subtle);
     }
 
     .matrix-table th:first-child {
@@ -910,12 +1052,16 @@
       padding: 16px 20px;
       font-size: 0.9rem;
       color: var(--text-muted);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .matrix-table tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
-      color: #fff;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-main);
+    }
+
+    [data-theme="light"] .matrix-table tr:hover td {
+      background: #f8fafc;
     }
 
     .badge-feat {
@@ -928,7 +1074,7 @@
 
     .badge-feat-green {
       background: rgba(16, 185, 129, 0.15);
-      color: #34d399;
+      color: var(--emerald-light);
     }
 
     .badge-feat-blue {
@@ -937,48 +1083,99 @@
     }
 
     /* ==========================================================================
-       SECTION 3: BIOMEDICAL ASSET & BREAKDOWN MANAGEMENT (NABH AUDITING READY)
+       INTEGRATED DUAL-DEVICE SHOWCASE (DESKTOP + EMBEDDED MOBILE PHONE MOCKUP)
        ========================================================================== */
-    .biomedical-section {
-      padding: 95px 0;
-      background: radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 60%), var(--bg-dark);
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .product-showcase-grid {
+    .devices-display-container {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 52px;
+      gap: 24px;
       align-items: center;
-      margin-bottom: 56px;
+      margin-bottom: 48px;
     }
 
-    @media (min-width: 992px) {
-      .product-showcase-grid {
-        grid-template-columns: 1fr 1fr;
+    @media (min-width: 900px) {
+      .devices-display-container {
+        grid-template-columns: 1.25fr 0.75fr;
       }
     }
 
-    .product-visual-card {
+    .desktop-screen-card {
       position: relative;
       border-radius: var(--radius-lg);
       overflow: hidden;
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(16, 185, 129, 0.15);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+      background: var(--bg-surface);
     }
 
-    .product-visual-card img {
+    .desktop-screen-card img {
       width: 100%;
       height: auto;
       display: block;
+    }
+
+    .mobile-phone-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+      background: var(--bg-surface);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 16px 16px;
+      transition: var(--transition-smooth);
+    }
+
+    .mobile-phone-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .mobile-phone-card img {
+      max-height: 380px;
+      width: auto;
+      border-radius: 24px;
+      display: block;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="light"] .mobile-phone-card img {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+      border-color: rgba(0, 0, 0, 0.08);
+    }
+
+    .mobile-phone-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--cyan-light);
+      background: rgba(0, 210, 255, 0.1);
+      border: 1px solid rgba(0, 210, 255, 0.25);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .mobile-phone-caption {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.45;
+      padding: 0 8px;
     }
 
     .product-hud-pill {
       position: absolute;
       bottom: 16px;
       left: 16px;
-      background: rgba(4, 7, 17, 0.9);
+      background: var(--bg-darkest);
       backdrop-filter: blur(12px);
       padding: 8px 16px;
       border-radius: var(--radius-full);
@@ -994,7 +1191,7 @@
     .features-card-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 20px;
       margin-bottom: 40px;
     }
 
@@ -1019,9 +1216,9 @@
     }
 
     .feat-card-item h4 {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 700;
-      color: #fff;
+      color: var(--text-main);
       margin-bottom: 8px;
       display: flex;
       align-items: center;
@@ -1071,11 +1268,6 @@
       box-shadow: 0 12px 30px rgba(0, 210, 255, 0.2);
     }
 
-    .tier-card.tier-purple:hover {
-      border-color: var(--purple-light);
-      box-shadow: 0 12px 30px rgba(139, 92, 246, 0.2);
-    }
-
     .tier-header {
       margin-bottom: 20px;
     }
@@ -1094,13 +1286,23 @@
     .tier-title {
       font-size: 1.5rem;
       font-weight: 800;
-      color: #fff;
+      color: var(--text-main);
     }
 
     .tier-subtitle {
       font-size: 0.92rem;
       color: var(--text-muted);
       margin-top: 6px;
+    }
+
+    /* ==========================================================================
+       SECTION 3: BIOMEDICAL ASSET & BREAKDOWN MANAGEMENT (NABH AUDITING READY)
+       ========================================================================== */
+    .biomedical-section {
+      padding: 95px 0;
+      background: radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 60%), var(--bg-dark);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     /* ==========================================================================
@@ -1173,7 +1375,7 @@
     .flow-step-title {
       font-size: 1.1rem;
       font-weight: 700;
-      color: #fff;
+      color: var(--text-main);
       margin-bottom: 8px;
     }
 
@@ -1184,65 +1386,12 @@
     }
 
     /* ==========================================================================
-       CATH LAB & SPECIALTY CARDIOLOGY VIEWER
-       ========================================================================== */
-    .cathlab-section {
-      padding: 95px 0;
-      background: radial-gradient(circle at 10% 50%, rgba(239, 68, 68, 0.08) 0%, transparent 60%), var(--bg-darkest);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .cathlab-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 52px;
-      align-items: center;
-    }
-
-    @media (min-width: 992px) {
-      .cathlab-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .cathlab-visual {
-      position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid rgba(239, 68, 68, 0.3);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(239, 68, 68, 0.15);
-    }
-
-    .cathlab-visual img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .cathlab-hud-pill {
-      position: absolute;
-      bottom: 16px;
-      left: 16px;
-      background: rgba(4, 7, 17, 0.85);
-      backdrop-filter: blur(12px);
-      padding: 8px 16px;
-      border-radius: var(--radius-full);
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* ==========================================================================
-       MOBILE PACS SHOWCASE ("MOBILE COMPATIBILITY")
+       SECTION 6: MOBILE DIAGNOSTIC PACS & DICOM VIEWER
        ========================================================================== */
     .mobile-section {
-      padding: 90px 0;
+      padding: 95px 0;
       position: relative;
-      background: radial-gradient(circle at 80% 50%, rgba(2, 132, 199, 0.08) 0%, transparent 60%), var(--bg-dark);
+      background: radial-gradient(circle at 80% 50%, rgba(2, 132, 199, 0.08) 0%, transparent 60%), var(--bg-darkest);
       border-bottom: 1px solid var(--border-subtle);
     }
 
@@ -1330,6 +1479,10 @@
       border-color: var(--cyan-primary);
     }
 
+    [data-theme="light"] .phone-switch-btn.active {
+      color: #ffffff;
+    }
+
     .mobile-features-list {
       display: grid;
       grid-template-columns: 1fr;
@@ -1360,7 +1513,7 @@
       font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 8px;
-      color: #fff;
+      color: var(--text-main);
       display: flex;
       align-items: center;
       gap: 10px;
@@ -1370,6 +1523,63 @@
       font-size: 0.9rem;
       color: var(--text-muted);
       line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       CATH LAB & SPECIALTY CARDIOLOGY VIEWER
+       ========================================================================== */
+    .cathlab-section {
+      padding: 95px 0;
+      background: radial-gradient(circle at 10% 50%, rgba(239, 68, 68, 0.08) 0%, transparent 60%), var(--bg-dark);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .cathlab-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .cathlab-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .cathlab-visual {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(239, 68, 68, 0.15);
+    }
+
+    [data-theme="light"] .cathlab-visual {
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+    }
+
+    .cathlab-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .cathlab-hud-pill {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: var(--bg-darkest);
+      backdrop-filter: blur(12px);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     /* ==========================================================================
@@ -1432,7 +1642,7 @@
        ========================================================================== */
     .support-section {
       padding: 90px 0;
-      background: linear-gradient(180deg, var(--bg-dark) 0%, #0c1529 100%);
+      background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-surface-elevated) 100%);
       border-bottom: 1px solid var(--border-subtle);
     }
 
@@ -1445,7 +1655,7 @@
       grid-template-columns: 1fr;
       gap: 32px;
       align-items: center;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
     }
 
     @media (min-width: 992px) {
@@ -1458,7 +1668,7 @@
     .support-title {
       font-size: clamp(1.8rem, 3vw, 2.3rem);
       font-weight: 800;
-      color: #fff;
+      color: var(--text-main);
       line-height: 1.25;
       margin-bottom: 14px;
     }
@@ -1468,13 +1678,6 @@
       font-size: 1.02rem;
       line-height: 1.6;
       margin-bottom: 24px;
-    }
-
-    .support-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      justify-content: center;
     }
 
     /* ==========================================================================
@@ -1493,7 +1696,11 @@
       padding: 40px 32px;
       max-width: 940px;
       margin: 0 auto;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="light"] .calc-card {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
     }
 
     .calc-group {
@@ -1503,7 +1710,7 @@
     .calc-group-title {
       font-size: 1.05rem;
       font-weight: 700;
-      color: #fff;
+      color: var(--text-main);
       margin-bottom: 16px;
       display: flex;
       align-items: center;
@@ -1529,7 +1736,7 @@
     }
 
     .calc-option {
-      background: rgba(255, 255, 255, 0.03);
+      background: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 14px 18px;
@@ -1544,14 +1751,12 @@
     }
 
     .calc-option:hover {
-      background: rgba(255, 255, 255, 0.06);
       border-color: var(--cyan-light);
     }
 
     .calc-option.selected {
       background: rgba(0, 210, 255, 0.1);
       border-color: var(--cyan-primary);
-      color: #fff;
       box-shadow: 0 0 14px rgba(0, 210, 255, 0.15);
     }
 
@@ -1593,12 +1798,12 @@
     .calc-rec-name {
       font-size: 1.35rem;
       font-weight: 800;
-      color: #fff;
+      color: var(--text-main);
       margin-top: 4px;
     }
 
     /* ==========================================================================
-       CONTACT & INQUIRY FORM
+       CONTACT & LEADERSHIP SECTION (MD SELVAKUMAR SOMASUNDARAM)
        ========================================================================== */
     .contact-section {
       padding: 95px 0;
@@ -1617,11 +1822,39 @@
       }
     }
 
+    .leadership-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-top: 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .leadership-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, var(--cyan-primary) 0%, var(--sapphire) 100%);
+      color: #031427;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    [data-theme="light"] .leadership-avatar {
+      color: #ffffff;
+    }
+
     .contact-info-list {
       display: flex;
       flex-direction: column;
       gap: 20px;
-      margin-top: 32px;
+      margin-top: 28px;
     }
 
     .contact-info-item {
@@ -1645,7 +1878,7 @@
 
     .contact-info-text b {
       display: block;
-      color: #fff;
+      color: var(--text-main);
       font-size: 0.95rem;
       margin-bottom: 2px;
     }
@@ -1664,7 +1897,11 @@
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-xl);
       padding: 36px 32px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="light"] .contact-form-card {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
     }
 
     .form-group {
@@ -1681,11 +1918,11 @@
 
     .form-input, .form-select, .form-textarea {
       width: 100%;
-      background: rgba(4, 7, 17, 0.8);
+      background: var(--input-bg);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 13px 16px;
-      color: #fff;
+      color: var(--text-main);
       font-size: 0.94rem;
       outline: none;
       transition: var(--transition-smooth);
@@ -1705,7 +1942,7 @@
        FOOTER
        ========================================================================== */
     footer {
-      background: #02050c;
+      background: var(--footer-bg);
       border-top: 1px solid var(--border-subtle);
       padding: 60px 0 30px;
     }
@@ -1737,7 +1974,7 @@
     .footer-title {
       font-size: 1rem;
       font-weight: 700;
-      color: #fff;
+      color: var(--text-main);
       margin-bottom: 18px;
     }
 
@@ -1759,7 +1996,7 @@
 
     .footer-bottom {
       padding-top: 30px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-top: 1px solid var(--border-subtle);
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -1778,7 +2015,7 @@
     }
 
     /* ==========================================================================
-       MOBILE STICKY BOTTOM ACTION BAR (ZERO MOJIBAKE PURE SVG)
+       MOBILE STICKY BOTTOM ACTION BAR (CLEAN PURE SVG ICONS)
        ========================================================================== */
     .mobile-bottom-bar {
       display: flex;
@@ -1787,10 +2024,10 @@
       left: 0;
       right: 0;
       height: 64px;
-      background: rgba(4, 7, 17, 0.96);
+      background: var(--header-bg);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-top: 1px solid var(--border-subtle);
       z-index: 999;
       padding: 6px 12px;
       gap: 8px;
@@ -1845,6 +2082,10 @@
       box-shadow: 0 2px 10px rgba(0, 210, 255, 0.35);
     }
 
+    [data-theme="light"] .mobile-bar-demo {
+      color: #ffffff;
+    }
+
     .mobile-bar-demo:active {
       background: #38bdf8;
       transform: scale(0.98);
@@ -1863,17 +2104,23 @@
       </a>
 
       <nav class="nav-links" aria-label="Main Navigation">
-        <a href="#live-demo" class="nav-link" style="color: var(--cyan-primary); font-weight: 700;">Live PACS Demos</a>
-        <a href="#solutions" class="nav-link">PACS</a>
-        <a href="#biomedical" class="nav-link">Biomedical CMS (NABH)</a>
-        <a href="#billing" class="nav-link">Hospital Billing</a>
-        <a href="#paperless" class="nav-link">Paperless Doctor EMR</a>
+        <a href="#live-demo" class="nav-link" style="color: var(--cyan-primary); font-weight: 700;">Live Demos</a>
+        <a href="#solutions" class="nav-link">PACS Suite</a>
+        <a href="#biomedical" class="nav-link">Biomedical (NABH)</a>
+        <a href="#billing" class="nav-link">Billing App</a>
+        <a href="#paperless" class="nav-link">Doctor EMR</a>
         <a href="#cathlab" class="nav-link">Cath Lab</a>
         <a href="#support" class="nav-link">24/7 Breakdown</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
       <div class="nav-actions">
+        <!-- Dark/Light Theme Switcher -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark/Light Mode" title="Switch Theme">
+          <svg class="sun-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
         <a href="tel:+919363721705" class="hotline-chip" title="24/7 Emergency Support">
           <span class="badge-dot"></span>
           <span>Support: <strong>93637 21705</strong></span>
@@ -1888,16 +2135,23 @@
 
   <!-- Mobile Dropdown Navigation Drawer -->
   <div class="mobile-drawer" id="mobile-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle);">
+      <span style="font-weight: 700; font-size: 0.9rem; color: var(--text-dim);">THEME SELECTION</span>
+      <button class="theme-toggle-btn" id="mobile-theme-toggle" style="width: auto; padding: 6px 14px; gap: 8px; font-size: 0.84rem;">
+        <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span id="mobile-theme-text">Toggle Theme</span>
+      </button>
+    </div>
     <a href="#live-demo" class="mobile-nav-link" onclick="closeDrawer()" style="color: var(--cyan-light);">Live PACS Demos (Online Now)</a>
     <a href="#solutions" class="mobile-nav-link" onclick="closeDrawer()">PACS Solutions &amp; Matrix</a>
     <a href="#biomedical" class="mobile-nav-link" onclick="closeDrawer()">Biomedical Asset &amp; Breakdown (NABH)</a>
     <a href="#billing" class="mobile-nav-link" onclick="closeDrawer()">Hospital Billing &amp; Counter App</a>
     <a href="#paperless" class="mobile-nav-link" onclick="closeDrawer()">Paperless Doctor EMR (Auto-Routing)</a>
-    <a href="#cathlab" class="mobile-nav-link" onclick="closeDrawer()">Cath Lab Cine Angio Viewer</a>
-    <a href="#mobile" class="mobile-nav-link" onclick="closeDrawer()">Zero-Footprint Mobile PACS</a>
+        <a href="#cathlab" class="mobile-nav-link" onclick="closeDrawer()">Cath Lab Cine Angio Viewer</a>
     <a href="#support" class="mobile-nav-link" onclick="closeDrawer()">24/7 Breakdown Support Desk</a>
     <a href="#estimator" class="mobile-nav-link" onclick="closeDrawer()">Hospital Suite Configurator</a>
-    <a href="#contact" class="mobile-nav-link" onclick="closeDrawer()">Contact &amp; Inquiries</a>
+    <a href="#contact" class="mobile-nav-link" onclick="closeDrawer()">Contact &amp; Leadership (MD)</a>
     <div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px; padding-top: 20px;">
       <a href="tel:+919363721705" class="btn btn-call">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -1919,15 +2173,16 @@
       <div class="hero-content">
         <div class="badge">
           <span class="badge-dot"></span>
-          Enterprise PACS &middot; Biomedical Asset Tracking (NABH) &middot; Billing &middot; Paperless EMR
+          Serving Hospitals Since 2024 &middot; Enterprise PACS &middot; Biomedical (NABH) &middot; Billing &middot; EMR
         </div>
         <h1 class="hero-headline">
           Clinical PACS &amp; Complete Hospital <span>Technology Suite</span>
         </h1>
         <p class="hero-lead">
-          SJ MEDITEK empowers hospitals, diagnostic centres, and scan chains with clinical-grade software: 
-          Standalone &amp; Enterprise PACS, Cath Lab Viewers, NABH-Compliant Biomedical Asset &amp; Breakdown Management, 
-          24-Hour Turnkey Hospital Billing, and 100% Penless Doctor EMR with instant auto-routing to pharmacy, lab, and radiology.
+          Founded in 2024 under the leadership of Managing Director <strong>Selvakumar Somasundaram</strong>, 
+          SJ MEDITEK empowers hospitals and scan centres with clinical-grade software: 
+          Standalone &amp; Enterprise PACS, NABH-Compliant Biomedical Asset &amp; Breakdown CMS, 
+          24-Hour Turnkey Hospital Billing, and 100% Penless Doctor EMR &mdash; each featuring dedicated native mobile applications.
         </p>
 
         <div class="hero-ctas">
@@ -1936,10 +2191,10 @@
             Launch Live PACS Demos
           </a>
           <a href="#biomedical" class="btn btn-secondary">
-            Biomedical CMS (NABH)
+            Biomedical (NABH) + Mobile
           </a>
           <a href="#billing" class="btn btn-secondary">
-            Hospital Billing
+            Billing App + Mobile
           </a>
           <a href="tel:+919363721705" class="btn btn-call">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -1961,8 +2216,8 @@
             <span>Turnkey Billing &amp; PACS Setup</span>
           </div>
           <div class="metric-item">
-            <b>100% Penless</b>
-            <span>Instant Auto-Routing to Rx, Lab &amp; PACS</span>
+            <b>Native Mobile</b>
+            <span>Integrated in Every Hospital Module</span>
           </div>
         </div>
       </div>
@@ -1975,7 +2230,7 @@
               <span class="badge-dot"></span>
               Active Clinical Session
             </span>
-            <span class="pacs-version-chip">SJ MEDITEK PACS v20.0</span>
+            <span class="pacs-version-chip">SJ MEDITEK &middot; Est. 2024</span>
           </div>
         </div>
       </div>
@@ -1983,7 +2238,7 @@
   </section>
 
   <!-- ======================================================================
-       LIVE WORKING PACS DEMOS SECTION (DIRECT REDIRECT ACCESS)
+       LIVE WORKING PACS DEMOS SECTION (DIRECT ACCESS)
        ====================================================================== -->
   <section id="live-demo" class="livedemo-section">
     <div class="wrap">
@@ -2095,12 +2350,78 @@
   <section id="solutions" class="solutions-section">
     <div class="wrap">
       <div class="section-header">
-        <div class="badge">PACS Core Architecture</div>
+        <div class="badge">PACS Core Architecture &middot; Workstation &amp; Mobile Viewer</div>
         <h2 class="section-title">Standalone vs. Enterprise Main PACS</h2>
         <p class="section-subtitle">
-          Whether you operate a single diagnostic scan centre or a multi-department multi-city hospital chain, 
-          SJ Meditek provides purpose-built, high-reliability PACS architectures tailored to your exact workflow.
+          Whether you operate a single diagnostic scan centre or a multi-department tertiary hospital chain, 
+          SJ Meditek provides purpose-built, high-reliability PACS architectures with dual-monitor clinical workstations and zero-install mobile viewing.
         </p>
+      </div>
+
+      <!-- Dual Devices Showcase: Desktop PACS Workstation + Mobile Diagnostic DICOM Phone Mockup -->
+      <div class="devices-display-container">
+        <!-- Desktop Screen: PACS Dual Monitor Workstation -->
+        <div class="desktop-screen-card">
+          <img src="assets/pacs-workstation.jpg" alt="SJ Meditek Diagnostic PACS Dual-Screen Clinical Workstation" width="600" height="340">
+          <div class="product-hud-pill">
+            <span class="badge-dot"></span>
+            Dual-Monitor Workstation &middot; Multi-Planar MPR &middot; DICOM 3.0
+          </div>
+        </div>
+
+        <!-- Native Mobile Phone App Mockup: Diagnostic Mobile PACS -->
+        <div class="mobile-phone-card">
+          <div class="mobile-phone-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span>Mobile PACS Viewer</span>
+          </div>
+          
+          <img id="mobile-screen-img" src="assets/pacs-mobile-worklist.jpg" alt="SJ Meditek Mobile Diagnostic PACS UI" width="220" style="max-height: 380px; border-radius: 24px;">
+
+          <div class="phone-switch-tab" style="margin-top: 14px;">
+            <button class="phone-switch-btn active" id="btn-mock-worklist" onclick="setMobileMock('worklist')">Study Worklist</button>
+            <button class="phone-switch-btn" id="btn-mock-detail" onclick="setMobileMock('detail')">DICOM Viewer</button>
+          </div>
+
+          <div class="mobile-phone-caption">
+            <strong>Zero-Install Web PACS:</strong> Pinch-to-zoom, window/leveling &amp; 1-click WhatsApp study share on any smartphone.
+          </div>
+        </div>
+      </div>
+
+      <!-- PACS Mobile & Cloud Diagnostic Features -->
+      <div class="features-card-grid">
+        <div class="feat-card-item">
+          <h4>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--cyan-light)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            Zero App Installation
+          </h4>
+          <p>No downloads from App Store or Play Store. Just open the secure URL and sign in on any smartphone, iPad, or Mac/PC.</p>
+        </div>
+
+        <div class="feat-card-item">
+          <h4>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--cyan-light)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/></svg>
+            Mobile Touch Gestures
+          </h4>
+          <p>Fluid pinch-to-zoom, one-finger window/leveling, and smooth vertical swipe to scroll through multi-slice CT/MR series.</p>
+        </div>
+
+        <div class="feat-card-item">
+          <h4>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--cyan-light)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+            1-Click WhatsApp Share
+          </h4>
+          <p>Share tokenized, time-limited study access links instantly with referring consultants, surgeons, or patients.</p>
+        </div>
+
+        <div class="feat-card-item">
+          <h4>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--cyan-light)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            IndexedDB Progressive Cache
+          </h4>
+          <p>Sub-second progressive rendering for 500+ CT slices with client-side intelligent caching over 4G/5G/Wi-Fi.</p>
+        </div>
       </div>
 
       <div class="solutions-grid">
@@ -2169,7 +2490,7 @@
 
       <!-- Feature Matrix Table -->
       <div id="matrix" class="matrix-wrapper">
-        <h3 style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 20px;">
+        <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--text-main); margin-bottom: 20px;">
           Technical Architectural Comparison
         </h3>
         <table class="matrix-table">
@@ -2243,65 +2564,67 @@
         </p>
       </div>
 
-      <div class="product-showcase-grid">
-        <div class="product-visual-card">
+      <!-- Dual Devices Showcase: Desktop Console + Mobile QR Scanner Phone Mockup -->
+      <div class="devices-display-container">
+        <!-- Desktop Screen -->
+        <div class="desktop-screen-card">
           <img src="assets/biomedical-asset-tracking.jpg" alt="SJ Meditek Hospital Biomedical Asset Management Dashboard" width="600" height="340">
           <div class="product-hud-pill">
             <span class="badge-dot"></span>
-            Equipment Uptime: 99.8% &middot; NABH Audit Compliant
+            Desktop Console &middot; 99.8% Uptime &middot; NABH Audit Compliant
           </div>
         </div>
 
-        <div>
-          <div class="badge badge-emerald" style="margin-bottom: 14px;">Complete Equipment Governance</div>
-          <h3 style="font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.3;">
-            1-Click NABH Compliance &amp; Instant Breakdown Dispatch
-          </h3>
-          <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.6; margin-bottom: 24px;">
-            Hospitals can no longer rely on paper maintenance registers that fail during statutory inspections. 
-            SJ Meditek BioMed Track provides complete digital governance over critical equipment like Ventilators, 
-            Defibrillators, CT, MRI, C-Arms, and Anaesthesia Workstations.
-          </p>
-
-          <div class="features-card-grid">
-            <div class="feat-card-item">
-              <h4>
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--emerald)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
-                QR Code Asset Tags
-              </h4>
-              <p>Stick waterproof QR tags on every machine. Any nurse or technician scans to view equipment history or raise a breakdown ticket in 5 seconds.</p>
-            </div>
-
-            <div class="feat-card-item">
-              <h4>
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--emerald)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                Real-Time Ticketing
-              </h4>
-              <p>Instant SMS/WhatsApp alerts to duty biomedical engineers. Automatically tracks Mean Time to Repair (MTTR), response time, and downtime hours.</p>
-            </div>
-
-            <div class="feat-card-item">
-              <h4>
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--emerald)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                NABH &amp; NABL History Cards
-              </h4>
-              <p>Export official Equipment History Cards in 1 click, complete with calibration certificates, AERB QA reports, and electrical safety logs.</p>
-            </div>
-
-            <div class="feat-card-item">
-              <h4>
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--emerald)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                PMS &amp; Calibration Alerts
-              </h4>
-              <p>Automated reminders for Planned Preventive Maintenance (PMS), AMC/CMC contract expiry dates, and sensor calibration deadlines.</p>
-            </div>
+        <!-- Native Mobile Phone App Mockup -->
+        <div class="mobile-phone-card">
+          <div class="mobile-phone-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span>BioMed Mobile QR App</span>
           </div>
+          <img src="assets/biomedical-mobile-phone.jpg" alt="BioMed Mobile QR Scanner App" width="220">
+          <div class="mobile-phone-caption">
+            <strong>Instant Camera QR Scan:</strong> Nurse / Tech scans equipment to log breakdown tickets in 5 seconds with zero complex login.
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="features-card-grid">
+        <div class="feat-card-item">
+          <h4>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--emerald)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+            Mobile QR Asset Tags
+          </h4>
+          <p>Stick waterproof QR tags on every machine. Any nurse or technician scans with their smartphone to view equipment history or raise a breakdown ticket in 5 seconds.</p>
+        </div>
+
+        <div class="feat-card-item">
+          <h4>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--emerald)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Real-Time WhatsApp Alerts
+          </h4>
+          <p>Instant WhatsApp notifications to duty biomedical engineers. Automatically tracks Mean Time to Repair (MTTR), response time, and downtime hours.</p>
+        </div>
+
+        <div class="feat-card-item">
+          <h4>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--emerald)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            NABH &amp; NABL History Cards
+          </h4>
+          <p>Export official Equipment History Cards in 1 click, complete with calibration certificates, AERB QA reports, and electrical safety logs.</p>
+        </div>
+
+        <div class="feat-card-item">
+          <h4>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--emerald)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            PMS &amp; Calibration Alerts
+          </h4>
+          <p>Automated reminders for Planned Preventive Maintenance (PMS), AMC/CMC contract expiry dates, and sensor calibration deadlines.</p>
         </div>
       </div>
 
       <!-- Small vs Enterprise Editions Grid -->
       <div class="tier-cards-grid">
-        <!-- Small Hospital Tier -->
         <div class="tier-card tier-emerald">
           <div class="tier-header">
             <span class="tier-badge badge-emerald">Turnkey Setup &middot; 24-Hr Deploy</span>
@@ -2315,7 +2638,7 @@
             </li>
             <li>
               <svg class="check-icon check-icon-emerald" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-              <span><strong>WhatsApp Breakdown Bot:</strong> Hospital staff log complaints directly via WhatsApp without logging into any portal.</span>
+              <span><strong>Mobile WhatsApp Bot:</strong> Hospital staff log complaints directly via smartphone without complex logins.</span>
             </li>
             <li>
               <svg class="check-icon check-icon-emerald" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
@@ -2323,7 +2646,7 @@
             </li>
             <li>
               <svg class="check-icon check-icon-emerald" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-              <span><strong>Zero Server Hardware Needed:</strong> Hosted securely on dedicated local micro-server or cloud with zero IT management.</span>
+              <span><strong>Zero Server Hardware Needed:</strong> Hosted securely on dedicated local micro-server or cloud with zero IT overhead.</span>
             </li>
           </ul>
           <a href="https://wa.me/919363721705?text=Hello%20SJ%20Meditek,%20I%20want%20details%20for%20Small%20Hospital%20Biomedical%20Asset%20Tracking%20System." class="btn btn-emerald" target="_blank" rel="noopener" style="width: 100%;">
@@ -2331,7 +2654,6 @@
           </a>
         </div>
 
-        <!-- Enterprise Hospital Tier -->
         <div class="tier-card tier-blue">
           <div class="tier-header">
             <span class="tier-badge badge-feat-blue">Enterprise Multi-Speciality</span>
@@ -2381,64 +2703,67 @@
         </p>
       </div>
 
-      <div class="product-showcase-grid">
-        <div>
-          <div class="badge badge-amber" style="margin-bottom: 14px;">Instant Counter Automation</div>
-          <h3 style="font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.3;">
-            Unified OP/IP Billing &amp; Automated Cashless TPA Claims
-          </h3>
-          <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.6; margin-bottom: 24px;">
-            Eliminate long billing queues and revenue leaks. SJ Meditek Smart Billing consolidates doctor consultation fees, 
-            investigations, bed charges, and medicine dispensing into one synchronized ledger.
-          </p>
-
-          <div class="features-card-grid">
-            <div class="feat-card-item">
-              <h4>
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--amber)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
-                Unified Counter Billing
-              </h4>
-              <p>Instant patient registration, customizable tariff cards, flexible room rent &amp; nursing charges, and unified discharge summary bills.</p>
-            </div>
-
-            <div class="feat-card-item">
-              <h4>
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--amber)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                Cashless TPA / Insurance
-              </h4>
-              <p>Pre-authorization tracking, co-pay calculation, and claims submission checklists for Star Health, Medi Assist, Vidal, and government schemes.</p>
-            </div>
-
-            <div class="feat-card-item">
-              <h4>
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--amber)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-                Pharmacy POS &amp; Stock Sync
-              </h4>
-              <p>Barcode medicine dispensing with automatic stock deduction, batch/expiry alerts, and direct integration with inpatient nursing orders.</p>
-            </div>
-
-            <div class="feat-card-item">
-              <h4>
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--amber)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                Daily Cashier Audit
-              </h4>
-              <p>Real-time cashier shift reconciliation by payment mode (Cash, UPI, Card, NEFT) with instant PDF/Excel exports and zero accounting mismatches.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-visual-card">
+      <!-- Dual Devices Showcase: Desktop Console + Mobile Financial Overview Phone Mockup -->
+      <div class="devices-display-container">
+        <!-- Desktop Screen -->
+        <div class="desktop-screen-card">
           <img src="assets/hospital-billing-system.jpg" alt="SJ Meditek Hospital Revenue and Counter Billing Suite" width="600" height="340">
           <div class="product-hud-pill" style="border-color: rgba(245, 158, 11, 0.4); color: #fbbf24;">
             <span class="badge-dot" style="background: #f59e0b;"></span>
-            Cashless TPA Authorized &middot; GST Invoicing Active
+            Desktop Console &middot; Cashless TPA &middot; GST Invoicing
           </div>
+        </div>
+
+        <!-- Native Mobile Phone App Mockup -->
+        <div class="mobile-phone-card">
+          <div class="mobile-phone-badge" style="color: #fbbf24; background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.3);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span>Mobile Billing &amp; Cashier App</span>
+          </div>
+          <img src="assets/billing-mobile-phone.jpg" alt="Hospital Billing Mobile Financial Overview Phone App" width="220">
+          <div class="mobile-phone-caption">
+            <strong>Director's Mobile Dashboard:</strong> Monitor real-time collections (Rs 1,48,500), UPI vs Cash split, and print receipts on mobile.
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="features-card-grid">
+        <div class="feat-card-item">
+          <h4>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--amber)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+            Unified Counter Billing
+          </h4>
+          <p>Instant patient registration, customizable tariff cards, flexible room rent &amp; nursing charges, and unified discharge summary bills.</p>
+        </div>
+
+        <div class="feat-card-item">
+          <h4>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--amber)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Cashless TPA / Insurance
+          </h4>
+          <p>Pre-authorization tracking, co-pay calculation, and claims submission checklists for Star Health, Medi Assist, Vidal, and government schemes.</p>
+        </div>
+
+        <div class="feat-card-item">
+          <h4>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--amber)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+            Pharmacy POS &amp; Stock Sync
+          </h4>
+          <p>Barcode medicine dispensing with automatic stock deduction, batch/expiry alerts, and direct integration with inpatient nursing orders.</p>
+        </div>
+
+        <div class="feat-card-item">
+          <h4>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--amber)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            Daily Mobile Cashier Audit
+          </h4>
+          <p>Real-time cashier shift reconciliation by payment mode (Cash, UPI, Card, NEFT) with instant PDF/Excel exports and zero accounting mismatches.</p>
         </div>
       </div>
 
       <!-- Small vs Enterprise Editions Grid -->
       <div class="tier-cards-grid">
-        <!-- Small Hospital Tier -->
         <div class="tier-card tier-emerald">
           <div class="tier-header">
             <span class="tier-badge badge-amber">1-Day Setup Guarantee</span>
@@ -2468,7 +2793,6 @@
           </a>
         </div>
 
-        <!-- Enterprise Hospital Tier -->
         <div class="tier-card tier-blue">
           <div class="tier-header">
             <span class="tier-badge badge-feat-blue">Multi-Speciality Hospital</span>
@@ -2518,53 +2842,36 @@
         </p>
       </div>
 
-      <div class="product-showcase-grid">
-        <div class="product-visual-card" style="border-color: rgba(139, 92, 246, 0.4);">
+      <!-- Dual Devices Showcase: Desktop Tablet Screen + Mobile Consultation Phone Mockup -->
+      <div class="devices-display-container">
+        <!-- Desktop / Tablet Screen -->
+        <div class="desktop-screen-card" style="border-color: rgba(139, 92, 246, 0.4);">
           <img src="assets/doctor-paperless-emr.jpg" alt="Doctor Paperless Tablet Consultation Portal with Auto-Routing" width="600" height="340">
           <div class="product-hud-pill" style="border-color: rgba(139, 92, 246, 0.4); color: var(--purple-light);">
             <span class="badge-dot" style="background: var(--purple);"></span>
-            Clinical Desk Active &middot; 4-Way Auto-Routing
+            Clinical Desk Console &middot; 4-Way Auto-Routing
           </div>
         </div>
 
-        <div>
-          <div class="badge badge-purple" style="margin-bottom: 14px;">Smart CPOE &amp; Tablet EMR</div>
-          <h3 style="font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.3;">
-            Doctor Clicks Once &mdash; The Entire Hospital Coordinates Instantly
-          </h3>
-          <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.6; margin-bottom: 24px;">
-            In traditional hospitals, patients wander between departments carrying handwritten slips, causing transcription mistakes, 
-            dispensing errors, and lost revenues. SJ Meditek connects the doctor's desk directly into hospital operational pipelines.
-          </p>
-
-          <ul class="feature-checklist">
-            <li>
-              <svg class="check-icon check-icon-purple" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-              <span><strong>100% Penless Digital Consultation:</strong> Fast specialty clinical templates (Cardio, Ortho, General Medicine, Pediatrics, OBG) with quick drug formulary.</span>
-            </li>
-            <li>
-              <svg class="check-icon check-icon-purple" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-              <span><strong>Tablet &amp; Touchscreen Optimized:</strong> Works natively on iPad, Android tablets, medical touch displays, or doctors' personal laptops.</span>
-            </li>
-            <li>
-              <svg class="check-icon check-icon-purple" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-              <span><strong>Digital Signature &amp; WhatsApp Rx:</strong> Secure digital signature stamping on prescriptions with instant 1-click WhatsApp copy sent to patient.</span>
-            </li>
-            <li>
-              <svg class="check-icon check-icon-purple" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-              <span><strong>Comprehensive Prior Visit History:</strong> 1-click access to previous consultation notes, historical lab reports, and prior PACS DICOM scans.</span>
-            </li>
-          </ul>
+        <!-- Native Mobile Phone App Mockup -->
+        <div class="mobile-phone-card">
+          <div class="mobile-phone-badge" style="color: var(--purple-light); background: rgba(139, 92, 246, 0.12); border-color: rgba(139, 92, 246, 0.3);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span>Doctor Mobile EMR App</span>
+          </div>
+          <img src="assets/doctor-mobile-phone.jpg" alt="Doctor Mobile Consultation EMR App" width="220">
+          <div class="mobile-phone-caption">
+            <strong>Bedside Inpatient Rounds:</strong> Issue 1-click e-prescriptions on smartphone with automatic instant routing.
+          </div>
         </div>
       </div>
 
       <!-- 4-Way Auto-Routing Flow -->
-      <div style="margin-top: 40px;">
-        <h3 style="font-size: 1.4rem; font-weight: 800; color: #fff; text-align: center; margin-bottom: 24px;">
+      <div>
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); text-align: center; margin-bottom: 24px;">
           The 4-Way Instant Automated Routing Engine
         </h3>
         <div class="autorouting-flow-grid">
-          <!-- STEP 1 -->
           <div class="flow-step-card">
             <div class="flow-step-icon">
               <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
@@ -2575,7 +2882,6 @@
             </p>
           </div>
 
-          <!-- STEP 2 -->
           <div class="flow-step-card">
             <div class="flow-step-icon" style="background: rgba(0, 210, 255, 0.12); border-color: rgba(0, 210, 255, 0.3); color: var(--cyan-light);">
               <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -2586,7 +2892,6 @@
             </p>
           </div>
 
-          <!-- STEP 3 -->
           <div class="flow-step-card">
             <div class="flow-step-icon" style="background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.3); color: var(--emerald-light);">
               <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
@@ -2597,7 +2902,6 @@
             </p>
           </div>
 
-          <!-- STEP 4 -->
           <div class="flow-step-card">
             <div class="flow-step-icon" style="background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.3); color: #fbbf24;">
               <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
@@ -2658,67 +2962,6 @@
           </li>
         </ul>
         <a href="#contact" class="btn btn-primary" style="margin-top: 10px;">Inquire for Cath Lab Solutions</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================================
-       MOBILE PACS SHOWCASE ("MOBILE COMPATIBILITY")
-       ====================================================================== -->
-  <section id="mobile" class="mobile-section">
-    <div class="wrap mobile-grid">
-      <div class="mobile-text">
-        <div class="badge">Mobile Responsiveness &amp; Portability</div>
-        <h2 class="section-title">Zero-Install Mobile Diagnostic PACS</h2>
-        <p class="section-subtitle">
-          Diagnose anywhere, anytime. Our zero-footprint web application delivers full diagnostic-grade imaging right inside Chrome, Safari, or Edge on iPhones, Android smartphones, iPads, and tablets.
-        </p>
-
-        <div class="mobile-features-list">
-          <div class="mobile-feat-box">
-            <h4>
-              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--cyan-light)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-              Zero App Installation
-            </h4>
-            <p>No downloads from App Store or Play Store. Just open the secure URL and sign in to access your worklist.</p>
-          </div>
-          <div class="mobile-feat-box">
-            <h4>
-              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--cyan-light)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/></svg>
-              Touch Gestures
-            </h4>
-            <p>Fluid pinch-to-zoom, one-finger window/leveling, and smooth vertical swipe to scroll through slices.</p>
-          </div>
-          <div class="mobile-feat-box">
-            <h4>
-              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--cyan-light)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
-              1-Click WhatsApp Share
-            </h4>
-            <p>Share tokenized, time-limited study access links instantly with referring consultants or patients.</p>
-          </div>
-          <div class="mobile-feat-box">
-            <h4>
-              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="var(--cyan-light)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-              IndexedDB Mobile Cache
-            </h4>
-            <p>Instant sub-second loading for 500+ CT slices with client-side progressive caching.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="phone-mockup-wrapper">
-        <div>
-          <div class="phone-mockup">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <img id="mobile-screen-img" src="assets/pacs-mobile-worklist.jpg" alt="SJ Meditek Mobile PACS UI Screenshot">
-            </div>
-          </div>
-          <div class="phone-switch-tab">
-            <button class="phone-switch-btn active" id="btn-mock-worklist" onclick="setMobileMock('worklist')">Study Worklist</button>
-            <button class="phone-switch-btn" id="btn-mock-detail" onclick="setMobileMock('detail')">DICOM Viewer</button>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -2794,8 +3037,8 @@
           </div>
         </div>
 
-        <div style="background: rgba(4, 7, 17, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-lg); padding: 24px;">
-          <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 14px;">On-Call SLA Guarantee:</h4>
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px;">
+          <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 14px;">On-Call SLA Guarantee:</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; color: var(--text-muted);">
             <li style="display: flex; gap: 8px;">
               <span style="color: var(--emerald);">&check;</span>
@@ -2890,7 +3133,7 @@
             <div class="calc-rec-title">Recommended Solution Architecture:</div>
             <div class="calc-rec-name" id="calc-rec-display">SJ Meditek Complete Healthcare Automation Suite</div>
             <div style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;" id="calc-rec-notes">
-              Full turnkey hospital bundle: PACS + NABH Biomedical CMS + Smart Billing + Paperless Doctor EMR with instant auto-routing. Ready for deployment in 24 hours.
+              Full turnkey hospital bundle: PACS + NABH Biomedical CMS + Smart Billing + Paperless Doctor EMR with native mobile companion apps in every module. Ready for deployment in 24 hours.
             </div>
           </div>
           <button class="btn btn-whatsapp" onclick="sendCustomQuoteWhatsApp()" style="white-space: nowrap;">
@@ -2902,16 +3145,31 @@
   </section>
 
   <!-- ======================================================================
-       CONTACT & OFFICIAL QUOTE FORM
+       CONTACT & OFFICIAL QUOTE FORM (WITH MD SELVAKUMAR SOMASUNDARAM)
        ====================================================================== -->
   <section id="contact" class="contact-section">
     <div class="wrap contact-grid">
       <div class="contact-info">
-        <div class="badge">Official Contact &amp; Support</div>
+        <div class="badge">Official Contact &amp; Corporate Desk</div>
         <h2 class="section-title" style="text-align: left;">Connect with SJ Meditek</h2>
         <p class="section-subtitle" style="text-align: left; margin-bottom: 24px;">
-          Whether you require a live demonstration, quotation for 24-hour hospital deployment, or emergency breakdown engineering, our technical specialists are ready to assist.
+          Whether you require a live demonstration, quotation for 24-hour hospital deployment, or emergency breakdown engineering, our executive team is ready to assist.
         </p>
+
+        <!-- Official MD Leadership Card -->
+        <div class="leadership-card">
+          <div class="leadership-avatar">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--cyan-light); text-transform: uppercase; letter-spacing: 0.05em;">Leadership &amp; Corporate Desk</div>
+            <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-top: 2px;">Selvakumar Somasundaram</div>
+            <div style="font-size: 0.88rem; color: var(--text-dim); font-weight: 600;">Managing Director &amp; Founder, SJ MEDITEK</div>
+            <div style="font-size: 0.88rem; color: var(--text-muted); margin-top: 8px; line-height: 1.55;">
+              "Founded in 2024, SJ MEDITEK was established to eliminate medical equipment downtime, automate clinical billing, and deliver diagnostic-grade PACS with 100% engineering accountability across India."
+            </div>
+          </div>
+        </div>
 
         <div class="contact-info-list">
           <div class="contact-info-item">
@@ -2929,7 +3187,7 @@
               <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.584 1.777.896 2.791.896 3.182 0 5.768-2.587 5.768-5.766.001-3.182-2.585-5.782-5.768-5.782zm3.385 8.163c-.144.405-.837.774-1.17.822-.312.043-.684.06-2.18-.558-1.748-.724-2.888-2.483-2.975-2.599-.088-.116-.708-.941-.708-1.796 0-.855.449-1.277.61-1.45.161-.173.351-.217.468-.217.116 0 .233.001.336.006.107.005.25-.041.391.298.144.348.49 1.199.533 1.287.043.088.072.19.014.305-.058.115-.087.188-.174.289-.088.102-.185.228-.264.307-.088.088-.18.183-.077.359.102.175.457.753.98 1.22 0 .001.002.001.003.002.673.599 1.241.785 1.417.872.175.088.277.073.38-.044.103-.116.438-.51.555-.685.116-.175.234-.145.394-.087.16.058 1.019.48 1.194.568.175.088.292.131.336.204.044.072.044.419-.1 1.024z"/></svg>
             </div>
             <div class="contact-info-text">
-              <b>WhatsApp Support</b>
+              <b>WhatsApp Support Desk</b>
               <a href="https://wa.me/919363721705" target="_blank" rel="noopener">Chat with Us (+91 93637 21705)</a>
             </div>
           </div>
@@ -2957,7 +3215,7 @@
       </div>
 
       <div class="contact-form-card">
-        <h3 style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 8px;">Request Demonstration / Quotation</h3>
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">Request Demonstration / Quotation</h3>
         <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">
           Our hospital technology consultants will contact you within 2 hours.
         </p>
@@ -3019,10 +3277,12 @@
         <div class="footer-brand">
           <img src="assets/logo.png" alt="SJ MEDITEK PACS Logo" width="160" height="48">
           <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; max-width: 320px;">
-            SJ MEDITEK provides clinical-grade Picture Archiving &amp; Communication Systems (PACS), 
-            NABH Biomedical Asset &amp; Breakdown Maintenance, 24-Hour Turnkey Hospital Billing, 
-            and 100% Penless Doctor Consultation Desks across India.
+            SJ MEDITEK, established in 2024, provides clinical-grade PACS, NABH Biomedical Asset &amp; Breakdown Management, 
+            24-Hour Turnkey Hospital Billing, and 100% Penless Doctor EMR with native mobile companion applications across India.
           </p>
+          <div style="margin-top: 14px; font-size: 0.84rem; color: var(--text-dim);">
+            Managing Director: <strong style="color: var(--text-main);">Selvakumar Somasundaram</strong>
+          </div>
         </div>
 
         <div>
@@ -3031,7 +3291,7 @@
             <li><a href="https://pacs.sjmeditek.com/" target="_blank" rel="noopener">Live Standalone PACS (pacs.sjmeditek.com)</a></li>
             <li><a href="https://pacs-main.sjmeditek.com/" target="_blank" rel="noopener">Live Main PACS (pacs-main.sjmeditek.com)</a></li>
             <li><a href="#cathlab">Cath Lab &amp; Angiography Viewer</a></li>
-            <li><a href="#mobile">Zero-Footprint Mobile PACS</a></li>
+            <li><a href="#solutions">Zero-Footprint Mobile PACS</a></li>
             <li><a href="#matrix">Standalone vs Enterprise Matrix</a></li>
           </ul>
         </div>
@@ -3040,9 +3300,11 @@
           <div class="footer-title">Hospital Software</div>
           <ul class="footer-links">
             <li><a href="#biomedical">Biomedical Asset Tracking (NABH)</a></li>
-            <li><a href="#biomedical">Hospital Breakdown CMS</a></li>
+            <li><a href="#biomedical">BioMed Mobile QR App</a></li>
             <li><a href="#billing">Smart Hospital Billing App</a></li>
-            <li><a href="#paperless">Paperless Doctor EMR (Auto-Routing)</a></li>
+            <li><a href="#billing">Mobile Collection Dashboard</a></li>
+            <li><a href="#paperless">Paperless Doctor EMR</a></li>
+            <li><a href="#paperless">Bedside Rounds Mobile App</a></li>
             <li><a href="#estimator">Hospital Suite Configurator</a></li>
           </ul>
         </div>
@@ -3054,17 +3316,17 @@
             <li><a href="https://wa.me/919363721705">WhatsApp Technical Desk</a></li>
             <li><a href="mailto:sjmeditek@gmail.com">sjmeditek@gmail.com</a></li>
             <li><a href="#support">Software Breakdown Service</a></li>
-            <li><a href="#contact">Schedule Live Demonstration</a></li>
+            <li><a href="#contact">Contact Managing Director</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>
-          &copy; <span id="cur-year">2026</span> <strong>SJ MEDITEK</strong>. All Rights Reserved. | GSTIN: <code style="color: var(--cyan-light);">33KFXPS6847K1Z5</code>
+          &copy; 2024 - <span id="cur-year">2026</span> <strong>SJ MEDITEK</strong>. All Rights Reserved. | Managing Director: <strong>Selvakumar Somasundaram</strong> | GSTIN: <code style="color: var(--cyan-light);">33KFXPS6847K1Z5</code>
         </div>
         <div style="color: var(--text-dim);">
-          Engineered for Clinical Precision &middot; DICOM 3.0 &middot; NABH Ready &middot; Turnkey 24-Hr Deploy
+          Founded 2024 &middot; DICOM 3.0 &middot; NABH Ready &middot; Native Mobile Companion in Every Suite
         </div>
       </div>
     </div>
@@ -3089,11 +3351,42 @@
   </div>
 
   <!-- ========================================================================
-       CLIENT INTERACTIVITY SCRIPT
+       CLIENT INTERACTIVITY & DUAL THEME SCRIPT
        ======================================================================== -->
   <script>
     document.getElementById('cur-year').textContent = new Date().getFullYear();
 
+    // Dark / Light Theme Toggle Functionality
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
+    const mobileThemeText = document.getElementById('mobile-theme-text');
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('sj-theme', theme);
+      if (mobileThemeText) {
+        mobileThemeText.textContent = theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+      }
+    }
+
+    const initialTheme = localStorage.getItem('sj-theme') || 'dark';
+    applyTheme(initialTheme);
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      });
+    }
+
+    if (mobileThemeToggleBtn) {
+      mobileThemeToggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      });
+    }
+
+    // Mobile Navigation Drawer
     const mobileToggle = document.getElementById('mobile-menu-toggle');
     const mobileDrawer = document.getElementById('mobile-drawer');
 
@@ -3187,7 +3480,7 @@
 
       if (hasBiomed && hasBilling && hasEMR) {
         display.textContent = 'SJ Meditek Complete Hospital Automation Suite';
-        notes.textContent = 'Integrated Enterprise PACS + NABH Biomedical CMS + Smart Billing & Pharmacy + 100% Penless Doctor EMR with instant 4-way auto-routing.';
+        notes.textContent = 'Integrated Enterprise PACS + NABH Biomedical CMS + Smart Billing & Pharmacy + 100% Penless Doctor EMR with native mobile companion apps in every module. Ready for deployment in 24 hours.';
       } else if (hasCath) {
         display.textContent = 'SJ Meditek Enterprise PACS + Cath Lab Angiography Cine Suite';
         notes.textContent = 'High frame-rate fluoroscopy, DSA, QCA stenosis analysis, and full hospital RIS connectivity.';
